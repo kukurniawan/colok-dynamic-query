@@ -21,7 +21,7 @@
         internal static string GetTerm(ITerm param, int index)
         {
             return
-                $"({(string.IsNullOrEmpty(param.TableName) ? string.Empty : param.TableName + ".")}{param.ColumnName}{GetOperator(param.Operator, index)}) ";
+                $"{(string.IsNullOrEmpty(param.TableName) ? string.Empty : param.TableName + ".")}{param.ColumnName} {GetOperator(param.Operator, index)} ";
         }
 
                 

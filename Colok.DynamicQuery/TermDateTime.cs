@@ -6,7 +6,7 @@ namespace Colok.DynamicQuery
     {
         internal static string GetTerm(ITerm param, int index)
         {
-            return $"({string.Empty}{param.ColumnName}{GetOperator(param.Operator, index)}) ";
+            return $"{string.Empty}{param.ColumnName} {GetOperator(param.Operator, index)} ";
         }
         
         private static object GetOperator(SqlOperator sqlOperator, int index)

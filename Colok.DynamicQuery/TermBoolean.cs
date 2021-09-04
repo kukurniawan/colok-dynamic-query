@@ -4,7 +4,7 @@
     {
         internal static string GetTerm(ITerm control, int index)
         {
-            return $"({string.Empty}{control.ColumnName} {GetOperator(control.Operator, index)}) ";
+            return $"{string.Empty}{control.ColumnName} {GetOperator(control.Operator, index)} ";
         }
 
         private static string GetOperator(SqlOperator sqlOperator, int index)

@@ -148,7 +148,7 @@ namespace Colok.DynamicQuery
         
         private static string AddLogicalOperator(int total, int indexLogical, ITerm param)
         {
-            return (total - indexLogical == 0 ? "" : param.Logical.ToString());
+            return total - indexLogical == 0 ? "" : $"{param.Logical.ToString()} ";
         }
         
         private static string GetParameter(ITerm param, int index)
@@ -162,8 +162,11 @@ namespace Colok.DynamicQuery
                 _ => TermChar.GetTerm(param, index)
             };
         }
-        
-        
+
+        public static QueryBuilder Create()
+        {
+            return new QueryBuilder();
+        }
         
     }
 }
