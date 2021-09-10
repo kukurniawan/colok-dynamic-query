@@ -1,0 +1,9 @@
+language: csharp
+mono: none
+dist: xenial
+dotnet: 5
+install:
+  - dotnet restore
+script:
+  - dotnet build
+  - dotnet test Colok.DynamicQuery.Test/Colok.DynamicQuery.Test.csproj
