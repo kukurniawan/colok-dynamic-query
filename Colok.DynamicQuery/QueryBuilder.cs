@@ -8,7 +8,7 @@ namespace Colok.DynamicQuery
 {
     public class QueryBuilder
     {
-        private readonly IList<ITerm> _listParameters;
+        private readonly List<ITerm> _listParameters;
         private IList<object> _listValue;
         private string _query;
 
@@ -20,6 +20,12 @@ namespace Colok.DynamicQuery
         public QueryBuilder Add(ITerm term)
         {
             _listParameters.Add(term);
+            return this;
+        }
+        
+        public QueryBuilder Add(IEnumerable<ITerm> terms)
+        {
+            _listParameters.AddRange(terms);
             return this;
         }
 

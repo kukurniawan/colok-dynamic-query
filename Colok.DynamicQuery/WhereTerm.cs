@@ -1,22 +1,22 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Colok.DynamicQuery
 {
     public class WhereTerm : ITerm
     {
-        [JsonPropertyName("d")]
+        [JsonProperty("d")]
         public ParameterDataType DataType { get; set; }
-        [JsonPropertyName("t")]
+        [JsonProperty("t")]
         public string TableName { get; set; }
-        [JsonPropertyName("c")]
+        [JsonProperty("c")]
         public string ColumnName { get; set; }
-        [JsonPropertyName("o")]
+        [JsonProperty("o")]
         public SqlOperator Operator { get; set; }
-        [JsonPropertyName("v")]
+        [JsonProperty("v")]
         public object Value { get; set; }
-        [JsonPropertyName("l")]
+        [JsonProperty("l")]
         public LogicalOperator Logical { get; set; } = LogicalOperator.AND;
-        [JsonPropertyName("n")]
+        [JsonProperty("n")]
         public bool Nullable { get; set; } = false;
 
     }
